@@ -1,19 +1,23 @@
 import { ImageBackground, Text, View, TouchableOpacity } from "react-native";
 import { styleContainer, styleText, styleElementos } from "../../styles/globalstyle"
 import { styles } from "./styles"
-import { MenuStackTypes } from "../../navigation/MenuStack.navigation";
+import { MenuTabTypes } from "../../navigation/MenuBottomTab.navigation";
 
-export function Slide1({ navigation }: MenuStackTypes) {
+export function Slide1({ navigation }: MenuTabTypes) {
     const slide = require('../../assets/VasoPlanta1.png')
     
     return (
         <ImageBackground source={slide} style={styleContainer.container}>
             <View style={styleContainer.container}>
-                <Text style={styles.text}>Slide 1</Text>
+                <View>
+                    <Text style={styleText.textTitle}>Plant</Text>
+                    <Text style={styles.text}>seu diário botânico pessoal</Text>
+                </View>
+
                 <TouchableOpacity style={styleElementos.butt}
-                    onPress={() => navigation.push("Slide2")}
+                    onPress={() => navigation.navigate("Slide2")}
                 >
-                    <Text>Slide 2</Text>
+                    <Text>Começar</Text>
                 </TouchableOpacity>
             </View>
         </ImageBackground>

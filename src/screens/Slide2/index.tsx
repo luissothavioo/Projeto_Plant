@@ -1,20 +1,21 @@
-import { ImageBackground, Text, View, Image } from "react-native";
+import { ImageBackground, Text, View, Image, TouchableOpacity } from "react-native";
 import { styleContainer, styleText, styleElementos } from "../../styles/globalstyle"
 import { styles } from "./styles"
 import { IPagina } from "../../../App";
 import { ButtonSlide, ButtonSlide2 } from "../../components/ButtonSlide"
+import { MenuDrawer, MenuDrawerTypes } from "../../navigation/MenuDrawer.navigation";
 
-export function Slide2({ setPageI }: IPagina) {
+export function Slide2({ navigation }: MenuDrawerTypes) {
     const slide = require('../../assets/VasoPlanta2.png')
     const rosa = require('../../assets/rosa.png')
     const suculenta = require('../../assets/suculenta.png')
     const girassol = require('../../assets/girassol.png')
-    
+
     return (
-        <ImageBackground source={slide} style={styleContainer.container}> 
+        <ImageBackground source={slide} style={styleContainer.container}>
             <View style={styleContainer.container}>
                 <Text style={styleText.textTitle}>Plant</Text>
-                
+
                 <View style={styles.quadroBranco}>
                     <View style={styles.head}>
                         <Text style={styleText.titleBoard}>Minhas plantas</Text>
@@ -62,18 +63,10 @@ export function Slide2({ setPageI }: IPagina) {
             </View>
 
             <View style={styleContainer.containerButton}>
-                <View style={styleElementos.butt}>
-                    <ButtonSlide onPressI={() => setPageI(1)} />
-                </View>
-                <View style={styleElementos.butt}>
-                    <ButtonSlide2 onPressI={() => setPageI(2)} />
-                </View>
-                <View style={styleElementos.butt}>
-                    <ButtonSlide onPressI={() => setPageI(3)} />
-                </View>
-                <View style={styleElementos.butt}>
-                    <ButtonSlide onPressI={() => setPageI(4)} />
-                </View>
+                <TouchableOpacity style={styleElementos.butt}
+                    onPress={() => navigation.push("Slide1")}
+                >
+                </TouchableOpacity>
             </View>
         </ImageBackground>
     )
