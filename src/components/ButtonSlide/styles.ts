@@ -2,20 +2,26 @@ import { StyleSheet } from "react-native";
 import { colors } from "../../styles/globalstyle";
 
 export const styles = StyleSheet.create({
-    ball: {
-        width: 30,
-        height: 30,
-        borderRadius: 15,
-        borderWidth: 3,
-        backgroundColor: colors.cinza,
-        borderColor: colors.cinza,
+    buttonPrimary: {
+        backgroundColor: colors.black,
+        borderRadius: 5,
+        margin: 10,
     },
-    ball2: {
-        width: 30,
-        height: 30,
-        borderRadius: 15,
-        borderWidth: 3,
-        backgroundColor: colors.green,
-        borderColor: colors.green,
+    buttonSecondary: {
+        backgroundColor: colors.black,
+        borderRadius: 5,
+        margin: 10,
+    },
+    buttonThird: {
+        backgroundColor: colors.black,
+        borderRadius: 5,
+        margin: 10,
+    },
+    text: {
+        color: colors.white,
+        fontWeight: "bold",
+        padding: 10,
+        fontSize: 18,
+        textAlign: "center",
     },
 })

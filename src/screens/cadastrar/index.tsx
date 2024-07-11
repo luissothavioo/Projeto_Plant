@@ -3,7 +3,7 @@ import { styleContainer, styleText, styleElementos } from "../../styles/globalst
 import { styles } from "./styles"
 import { MenuTabTypes } from "../../navigation/MenuBottomTab.navigation";
 
-export function Slide1({ navigation }: MenuTabTypes) {
+export function cadastrar({ navigation }: MenuTabTypes) {
     const slide = require('../../assets/VasoPlanta1.png')
     
     return (
