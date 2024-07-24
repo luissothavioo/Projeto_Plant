@@ -1,20 +1,30 @@
-import { createDrawerNavigator, DrawerNavigationProp } from '@react-navigation/drawer';
 import { ScreenLogin, ScreenCadastrar } from '../screens'
+import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { colors } from '../styles/globalstyle';
 
-type LoginDrawerParamList = {
+type MenuStackParam = {
     Login: undefined
     Register: undefined
 }
-type LoginScreenNavigationProp = DrawerNavigationProp<LoginDrawerParamList, 'Login'>
+
+type MenuScreenNavigation = BottomTabNavigationProp<MenuStackParam, "Login">
 export type LoginTypes = {
-    navigation: LoginScreenNavigationProp
+    navigation: MenuScreenNavigation
 }
+
 export function LoginNavigation() {
-    const Stack = createDrawerNavigator<LoginDrawerParamList>()
-    return {
-        <Drawer.Navigator id='login' screenOption={{ headerShown: false }}>
-            <Drawer.Screen name='login' component={ScreenLogin} />
-            <Drawer.Screen name='Register' component={ScreenCadastrar} />
-        </Drawer.Navigator>
-    }
+    const Stack = createBottomTabNavigator<MenuStackParam>();
+    return (
+        <Stack.Navigator screenOptions={{
+            headerShown: false,
+        }}>
+           <Stack.Screen options={{
+            headerTitle: "Login"
+           }} name="Login" component={ScreenLogin}/>
+
+           <Stack.Screen options={{
+            headerTitle: "Registrar" 
+           }} name="Register" component={ScreenCadastrar}/>
+        </Stack.Navigator>
+    )
 }

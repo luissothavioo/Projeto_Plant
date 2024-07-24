@@ -1,29 +1,41 @@
 import { ImageBackground, Text, View, KeyboardAvoidingView, TextInput, Alert } from "react-native";
-import { styleContainer, styleText, styleElementos } from "../../styles/globalstyle"
+import { styleContainer, styleText } from "../../styles/globalstyle"
 import { styles } from "./styles"
-import { MenuTabTypes } from "../../navigation/MenuBottomTab.navigation";
+import { colors } from "../../styles/globalstyle"
 
 import React, { useState } from 'react';
 import { Entypo, MaterialIcons} from "@expo/vector-icons"
-import { ComponentButtonInterface } from '../../components/ButtonSlide'
-import {  } from '../../navigation/login.navigation'
+import { ButtonInterface } from "../../components/ButtonSlide/index";
+import { LoginTypes } from '../../navigation/login.navigation'
+
+import { useAuth } from '../../hook/auth'
+import { AxiosError } from 'axios'
 
 export interface IAuthenticate {
     email?: string;
     password?: string;
 }
-export function login({ navigation }: LoginTypes) {
+export function Login({ navigation }: LoginTypes) {
     const slide = require('../../assets/VasoPlanta1.png')
     const [data, setData] = useState<IAuthenticate>();
+    const { signIn, setLoading } = useAuth()
     async function handleSignIn() {
         if (data?.email && data.password) {
-            console.log(data)
+            setLoading(true)
+            try {
+                await signIn(data)
+            } catch (error) {
+                const err = error as AxiosError
+                const msg = err.response?.data as string
+                Alert.alert(msg)
+            }
+            setLoading(false)
         } else {
             Alert.alert("Preencha todos os campos!");
         }
     }
     function handleRegister() {
-        navigation.navigate("Register")
+        navigation.navigate('Register')
     }
     function handleChange(item: IAuthenticate) {
         setData({ ...data, ...item})
@@ -32,11 +44,35 @@ export function login({ navigation }: LoginTypes) {
     return (
         <ImageBackground source={slide} style={styleContainer.container}>
             <View style={styleContainer.container}>
-                <View>
-                    <Text style={styleText.textTitle}>Plant</Text>
-                    <Text style={styles.text}>seu diário botânico pessoal</Text>
-                </View>
+                <KeyboardAvoidingView>
+                    <View>
+                        <Text style={styleText.textTitle}>Plant</Text>
+                        <Text style={styles.text}>Login</Text>
+                    </View>
+                    <View style={styles.formRow}>
+                        <TextInput
+                            placeholderTextColor={colors.green}
+                            style={styles.input}
+                            placeholder="Email"
+                            keyboardType="email-address"
+                            autoCapitalize="none"
+                            onChangeText={(i) => handleChange({ email: i})}
+                        />
+                    </View>
+                    <View style={styles.formRow}>
+                        <TextInput
+                            placeholderTextColor={colors.green}
+                            style={styles.input}
+                            placeholder="Senha"
+                            secureTextEntry={true}
+                            autoCapitalize="none"
+                            onChangeText={(i) => handleChange({ password: i})}
+                        />
+                    </View>
+                    <ButtonInterface title='Login' type='primary' onPressI={handleSignIn} />
+                    <ButtonInterface title='Cadastre-se' type='secondary' onPressI={handleRegister} />
+                </KeyboardAvoidingView>
             </View>
         </ImageBackground>
-    )
+    );
 }

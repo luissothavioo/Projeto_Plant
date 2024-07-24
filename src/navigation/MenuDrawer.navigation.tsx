@@ -1,21 +1,37 @@
 import { DrawerNavigationProp, createDrawerNavigator } from '@react-navigation/drawer';
-import { ScreenSlide3, ScreenSlide4 } from '../screens';
+import { MenuTabs } from './MenuBottomTab.navigation';
+import { colors } from '../styles/globalstyle'
+import { Ionicons } from '@expo/vector-icons';
 
 type MenuDrawerParam = {
-    Slide3: undefined
-    Slide4: undefined
+    Tab: undefined
 }
-type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Slide3">
-export type MenuDrawerTypes = {
+type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Tab">
+export type DrawerTypes = {
     navigation: MenuScreenNavigation
 }
 
-export function MenuDrawer() {
+export function DrawerNavigation() {
     const Drawer = createDrawerNavigator<MenuDrawerParam>();
     return (
-        <Drawer.Navigator>
-            <Drawer.Screen name="Slide3" component={ScreenSlide3} />
-            <Drawer.Screen name="Slide4" component={ScreenSlide4} />
+        <Drawer.Navigator screenOptions={{
+            headerStyle: { backgroundColor: 'rgb(143, 135, 131)'},
+            headerTintColor: colors.white,
+            drawerStyle: {
+                backgroundColor: 'rgba(143, 135, 131, 0.5)',
+            },
+            drawerActiveTintColor: colors.black,
+            drawerInactiveTintColor: colors.black
+        }}>
+            <Drawer.Screen name='Tab' component={MenuTabs}
+                options={{
+                    drawerLabel: 'Pagina Inicial',
+                    headerTitle: '',
+                    drawerIcon: () => (
+                        <Ionicons name="person" size={24} color={colors.black} />
+                    ),
+                }}
+            />
         </Drawer.Navigator>
     )
 }

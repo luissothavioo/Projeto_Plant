@@ -1,11 +1,9 @@
 import { ImageBackground, Text, View, Image, TouchableOpacity } from "react-native";
 import { styleContainer, styleText, styleElementos } from "../../styles/globalstyle"
 import { styles } from "./styles"
-import { IPagina } from "../../../App";
-import { ButtonSlide, ButtonSlide2 } from "../../components/ButtonSlide"
-import { MenuDrawer, MenuDrawerTypes } from "../../navigation/MenuDrawer.navigation";
+import { DrawerTypes } from "../../navigation/MenuDrawer.navigation";
 
-export function Slide2({ navigation }: MenuDrawerTypes) {
+export function Slide2({ navigation }: DrawerTypes) {
     const slide = require('../../assets/VasoPlanta2.png')
     const rosa = require('../../assets/rosa.png')
     const suculenta = require('../../assets/suculenta.png')
@@ -62,12 +60,6 @@ export function Slide2({ navigation }: MenuDrawerTypes) {
                 </View>
             </View>
 
-            <View style={styleContainer.containerButton}>
-                <TouchableOpacity style={styleElementos.butt}
-                    onPress={() => navigation.push("Slide1")}
-                >
-                </TouchableOpacity>
-            </View>
         </ImageBackground>
     )
 }

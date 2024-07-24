@@ -1,15 +1,16 @@
 import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { ScreenSlide1, ScreenSlide2, ScreenSlide3, ScreenSlide4 } from '../screens';
+import { Home, Plantas, Todas, Informações } from '../screens';
 import { Entypo, Feather } from '@expo/vector-icons';
 import { FontAwesome6, FontAwesome, AntDesign } from '@expo/vector-icons';
+import { colors } from "../styles/globalstyle"
 
 type MenuTabParam = {
-    Slide1: undefined
-    Slide2: undefined
-    Slide3: undefined
-    Slide4: undefined
+    Home: undefined
+    Plantas: undefined
+    Todas: undefined
+    Informações: undefined
 }
-type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Slide2">
+type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Home">
 export type MenuTabTypes = {
     navigation: MenuScreenNavigation
 }
@@ -17,29 +18,32 @@ export type MenuTabTypes = {
 export function MenuTabs() {
     const Tab = createBottomTabNavigator<MenuTabParam>();
     return (
-        <Tab.Navigator screenOptions={{ headerShown: false }}>
-            <Tab.Screen name="Slide1" component={ScreenSlide1}
+        <Tab.Navigator screenOptions={{ 
+            headerShown: false,
+            }}>
+            <Tab.Screen name="Home" component={Home}
                 options={{
                     tabBarIcon: () => (
                         <FontAwesome6 name="house-chimney" size={24} color="black" />
                     )
                 }}
             />
-            <Tab.Screen name="Slide2" component={ScreenSlide2}
+            <Tab.Screen name="Plantas" component={Plantas}
                 options={{
                     tabBarIcon: () => (
                         <FontAwesome6 name="plant-wilt" size={24} color="black" />
                     )
+                    
                 }}
             />
-            <Tab.Screen name="Slide3" component={ScreenSlide3}
+            <Tab.Screen name="Todas" component={Todas}
                 options={{
                     tabBarIcon: () => (
                         <FontAwesome name="search" size={24} color="black" />
                     )
                 }}
             />
-            <Tab.Screen name="Slide4" component={ScreenSlide4}
+            <Tab.Screen name="Informações" component={Informações}
                 options={{
                     tabBarIcon: () => (
                         <AntDesign name="eye" size={24} color="black" />
