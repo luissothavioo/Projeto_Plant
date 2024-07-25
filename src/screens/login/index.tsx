@@ -51,7 +51,7 @@ export function Login({ navigation }: LoginTypes) {
                     </View>
                     <View style={styles.formRow}>
                         <TextInput
-                            placeholderTextColor={colors.green}
+                            placeholderTextColor={colors.white}
                             style={styles.input}
                             placeholder="Email"
                             keyboardType="email-address"
@@ -61,7 +61,7 @@ export function Login({ navigation }: LoginTypes) {
                     </View>
                     <View style={styles.formRow}>
                         <TextInput
-                            placeholderTextColor={colors.green}
+                            placeholderTextColor={colors.white}
                             style={styles.input}
                             placeholder="Senha"
                             secureTextEntry={true}

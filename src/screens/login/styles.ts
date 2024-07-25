@@ -27,9 +27,10 @@ export const styles = StyleSheet.create({
         margin: 10,
         flexDirection: "row",
         alignItems: "center",
-        borderWidth: 0.7,
-        borderColor: colors.green,
+        borderWidth: 1,
+        borderColor: colors.black,
         borderRadius: 5,
+        backgroundColor: 'rgba(183, 182, 182, 0.25)',
     },
 
     icon: {

@@ -1,5 +1,5 @@
 import { ScreenLogin, ScreenCadastrar } from '../screens'
-import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
 import { colors } from '../styles/globalstyle';
 
 type MenuStackParam = {
@@ -7,13 +7,13 @@ type MenuStackParam = {
     Register: undefined
 }
 
-type MenuScreenNavigation = BottomTabNavigationProp<MenuStackParam, "Login">
+type MenuScreenNavigation = StackNavigationProp<MenuStackParam, "Login">
 export type LoginTypes = {
     navigation: MenuScreenNavigation
 }
 
 export function LoginNavigation() {
-    const Stack = createBottomTabNavigator<MenuStackParam>();
+    const Stack = createStackNavigator<MenuStackParam>();
     return (
         <Stack.Navigator screenOptions={{
             headerShown: false,

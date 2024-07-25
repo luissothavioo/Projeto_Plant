@@ -53,7 +53,7 @@ export function Register({ navigation }: LoginTypes) {
                     </View>
                     <View style={styles.formRow}>
                         <TextInput
-                            placeholderTextColor={colors.green}
+                            placeholderTextColor={colors.white}
                             style={styles.input}
                             placeholder="Nome"
                             onChangeText={(i) => handleChange({ name: i})}
@@ -61,7 +61,7 @@ export function Register({ navigation }: LoginTypes) {
                     </View>
                     <View style={styles.formRow}>
                         <TextInput
-                            placeholderTextColor={colors.green}
+                            placeholderTextColor={colors.white}
                             style={styles.input}
                             placeholder="Email"
                             keyboardType="email-address"
@@ -71,7 +71,7 @@ export function Register({ navigation }: LoginTypes) {
                     </View>
                     <View style={styles.formRow}>
                         <TextInput
-                            placeholderTextColor={colors.green}
+                            placeholderTextColor={colors.white}
                             style={styles.input}
                             placeholder="Senha"
                             secureTextEntry={true}
