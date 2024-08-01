@@ -17,4 +17,9 @@ export const styles = StyleSheet.create({
         padding: 10,
         fontFamily: 'Asap_400Regular',
     },
+    botao: {
+        position: "absolute",
+        paddingBottom: 1,
+        paddingRight: 0,
+    }
 })

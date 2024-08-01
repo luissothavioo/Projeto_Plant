@@ -3,6 +3,7 @@ import { Home, Plantas, Todas, Informações, Mensagem } from '../screens';
 import { Entypo, Feather } from '@expo/vector-icons';
 import { FontAwesome6, FontAwesome, AntDesign } from '@expo/vector-icons';
 import { colors } from "../styles/globalstyle"
+import { MessageNavigation } from './message.navigation'
 
 type MenuTabParam = {
     Home: undefined
@@ -56,11 +57,11 @@ export function MenuTabs() {
                     )
                 }}
             />
-            <Tab.Screen name="Mensagem" component={Mensagem}
+            <Tab.Screen name="Mensagem" component={MessageNavigation}
                 options={{
                     tabBarIcon: () => (
                         <FontAwesome6 name="house-chimney" size={24} color="white" />
-                    )
+                    ),
                 }}
             />
         </Tab.Navigator>
