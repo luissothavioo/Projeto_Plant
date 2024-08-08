@@ -1,4 +1,3 @@
-
 import { Dispatch, SetStateAction, useState } from "react"
 import { useFonts, Offside_400Regular } from '@expo-google-fonts/offside';
 import { Inter_700Bold} from '@expo-google-fonts/inter';

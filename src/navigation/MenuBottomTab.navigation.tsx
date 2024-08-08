@@ -1,7 +1,6 @@
 import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { Home, Plantas, Todas, Informações, Mensagem } from '../screens';
-import { Entypo, Feather, FontAwesome5 } from '@expo/vector-icons';
-import { FontAwesome6, FontAwesome, AntDesign, Ionicons } from '@expo/vector-icons';
+import { Home, Plantas, Todas, Informações } from '../screens';
+import { FontAwesome, Ionicons, Entypo, FontAwesome5 } from '@expo/vector-icons';
 import { colors } from "../styles/globalstyle"
 import { MessageNavigation } from './message.navigation'
 

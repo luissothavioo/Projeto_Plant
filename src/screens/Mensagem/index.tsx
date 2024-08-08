@@ -8,7 +8,7 @@ import { FlatList } from "react-native-gesture-handler";
 import { styleContainer } from "../../styles/globalstyle"
 import { MessageTypes } from "../../navigation/message.navigation";
 import { colors } from "../../styles/globalstyle";
-import { AntDesign, Entypo } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
 export function Mensagem({ navigation }: MessageTypes) {
     const slide = require('../../assets/VasoPlanta1.png')

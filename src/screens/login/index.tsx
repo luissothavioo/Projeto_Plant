@@ -4,7 +4,6 @@ import { styles } from "./styles"
 import { colors } from "../../styles/globalstyle"
 
 import React, { useState } from 'react';
-import { Entypo, MaterialIcons} from "@expo/vector-icons"
 import { ButtonInterface } from "../../components/ButtonSlide/index";
 import { LoginTypes } from '../../navigation/login.navigation'
 

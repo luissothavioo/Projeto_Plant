@@ -1,5 +1,5 @@
-import { ImageBackground, Text, View, Image, TouchableOpacity } from "react-native";
-import { styleContainer, styleText, styleElementos } from "../../styles/globalstyle"
+import { ImageBackground, Text, View, Image, } from "react-native";
+import { styleContainer, styleText } from "../../styles/globalstyle"
 import { styles } from "./styles"
 import { DrawerTypes } from "../../navigation/MenuDrawer.navigation";
 
@@ -19,7 +19,7 @@ export function Plantas({ navigation }: DrawerTypes) {
                         <Text style={styleText.titleBoard}>Minhas plantas</Text>
                         <View style={styles.paddingTodasButton}>
                             <View style={styles.todasButton}>
-                                <Text style={styles.todasText}>TODAS</Text>
+                                <Text style={styles.todasText} onPress={() => navigation.navigate("Todas")}>TODAS</Text>
                             </View>
                         </View>
                     </View>

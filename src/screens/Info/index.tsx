@@ -1,7 +1,6 @@
 import { ImageBackground, Text, View, StyleSheet, Image } from "react-native";
 import { styleContainer, styleText, styleElementos } from "../../styles/globalstyle"
 import { styles } from "./styles"
-import { IPagina } from "../../../App";
 
 export function Info() {
     const slide = require('../../assets/VasoPlanta4.png')

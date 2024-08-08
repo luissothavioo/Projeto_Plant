@@ -1,6 +1,5 @@
 import { ScreenLogin, ScreenCadastrar } from '../screens'
 import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
-import { colors } from '../styles/globalstyle';
 
 type MenuStackParam = {
     Login: undefined

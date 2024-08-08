@@ -1,7 +1,6 @@
-import { ImageBackground, Text, View, StyleSheet, Image } from "react-native";
-import { styleContainer, styleText, styleElementos } from "../../styles/globalstyle"
+import { ImageBackground, Text, View, Image } from "react-native";
+import { styleContainer, styleText } from "../../styles/globalstyle"
 import { styles } from "./styles"
-import { IPagina } from "../../../App";
 
 export function Pesquisar() {
     const slide = require('../../assets/VasoPlanta3.png')
@@ -35,7 +34,7 @@ export function Pesquisar() {
                         <View style={styles.paddingQuadroPreto}>
                             <View style={styles.quadroPreto}>
                                 <View style={styles.image}>
-                                    <Image source={cacto} />
+                                    <Image source={cacto}/>
                                 </View>
                                 <Text style={styles.textTitleQuadroPreto}>Cacto</Text>
                             </View>

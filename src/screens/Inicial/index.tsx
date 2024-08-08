@@ -1,5 +1,5 @@
-import { ImageBackground, Text, View, TouchableOpacity } from "react-native";
-import { styleContainer, styleText, styleElementos } from "../../styles/globalstyle"
+import { ImageBackground, Text, View } from "react-native";
+import { styleContainer, styleText } from "../../styles/globalstyle"
 import { styles } from "./styles"
 import { MenuTabTypes } from "../../navigation/MenuBottomTab.navigation";
 import { useAuth } from "../../hook/auth";
