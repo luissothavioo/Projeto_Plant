@@ -8,7 +8,7 @@ import { FlatList } from "react-native-gesture-handler";
 import { styleContainer } from "../../styles/globalstyle"
 import { MessageTypes } from "../../navigation/message.navigation";
 import { colors } from "../../styles/globalstyle";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Entypo } from "@expo/vector-icons";
 
 export function Mensagem({ navigation }: MessageTypes) {
     const slide = require('../../assets/VasoPlanta1.png')
@@ -35,7 +35,7 @@ export function Mensagem({ navigation }: MessageTypes) {
             </View>
         )
     })
-    return(
+    return (
         <ImageBackground source={slide} style={styleContainer.container}>
             <View style={styles.container}>
                 {
@@ -43,15 +43,17 @@ export function Mensagem({ navigation }: MessageTypes) {
                         <FlatList
                             data={message}
                             renderItem={renderItem}
-                            keyExtractor={item => String(item.id)}
+                            keyExtractor={(item) => String(item.id)}
                         />
                     )
                 }
             </View>
-            <TouchableOpacity style={styles.botao}
-                onPress={() => navigation.navigate("CadMessage")}>
-                <AntDesign name="pluscircle" size={48} color={colors.black} />
-            </TouchableOpacity>
+            <View style={styles.containerBotao}>
+                <TouchableOpacity style={styles.botao}
+                    onPress={() => navigation.navigate("CadMessage")}>
+                    <Entypo name="plus" size={48} color={colors.black} />
+                </TouchableOpacity>
+            </View>
         </ImageBackground>
     )
 }

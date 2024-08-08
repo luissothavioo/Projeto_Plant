@@ -18,7 +18,7 @@ export function DrawerNavigation() {
             headerStyle: { backgroundColor: 'rgb(143, 135, 131)'},
             headerTintColor: colors.white,
             drawerStyle: {
-                backgroundColor: 'rgba(143, 135, 131, 0.5)',
+                backgroundColor: 'rgb(143, 135, 131)',
             },
             drawerActiveTintColor: colors.black,
             drawerInactiveTintColor: colors.black
@@ -32,6 +32,7 @@ export function DrawerNavigation() {
                     ),
                 }}
             />
+            
         </Drawer.Navigator>
     )
 }

@@ -3,7 +3,7 @@ import { styleContainer, styleText, styleElementos } from "../../styles/globalst
 import { styles } from "./styles"
 import { DrawerTypes } from "../../navigation/MenuDrawer.navigation";
 
-export function Slide2({ navigation }: DrawerTypes) {
+export function Plantas({ navigation }: DrawerTypes) {
     const slide = require('../../assets/VasoPlanta2.png')
     const rosa = require('../../assets/rosa.png')
     const suculenta = require('../../assets/suculenta.png')

@@ -1,7 +1,7 @@
 import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { Home, Plantas, Todas, Informações, Mensagem } from '../screens';
-import { Entypo, Feather } from '@expo/vector-icons';
-import { FontAwesome6, FontAwesome, AntDesign } from '@expo/vector-icons';
+import { Entypo, Feather, FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome6, FontAwesome, AntDesign, Ionicons } from '@expo/vector-icons';
 import { colors } from "../styles/globalstyle"
 import { MessageNavigation } from './message.navigation'
 
@@ -25,20 +25,21 @@ export function MenuTabs() {
                 tabBarActiveBackgroundColor: 'rgb(143, 135, 131)',
                 tabBarActiveTintColor: colors.white,
                 headerShown: false,
+                tabBarShowLabel: false,
                 tabBarInactiveBackgroundColor: 'rgb(143, 135, 131)',
                 tabBarInactiveTintColor: colors.white,
             }}>
             <Tab.Screen name="Home" component={Home}
                 options={{
                     tabBarIcon: () => (
-                        <FontAwesome6 name="house-chimney" size={24} color="white" />
+                        <FontAwesome name="home" size={26} color={colors.white} />
                     )
                 }}
             />
             <Tab.Screen name="Plantas" component={Plantas}
                 options={{
                     tabBarIcon: () => (
-                        <FontAwesome6 name="plant-wilt" size={24} color="white" />
+                        <Ionicons name="flower" size={25} color={colors.white} />
                     )
                     
                 }}
@@ -46,21 +47,21 @@ export function MenuTabs() {
             <Tab.Screen name="Todas" component={Todas}
                 options={{
                     tabBarIcon: () => (
-                        <FontAwesome name="search" size={24} color="white" />
+                        <FontAwesome5 name="search" size={23} color={colors.white} />
                     )
                 }}
             />
             <Tab.Screen name="Informações" component={Informações}
                 options={{
                     tabBarIcon: () => (
-                        <AntDesign name="eye" size={24} color="white" />
+                        <FontAwesome5 name="book" size={23} color={colors.white} />
                     )
                 }}
             />
             <Tab.Screen name="Mensagem" component={MessageNavigation}
                 options={{
                     tabBarIcon: () => (
-                        <FontAwesome6 name="house-chimney" size={24} color="white" />
+                        <Entypo name="chat" size={24} color={colors.white} />
                     ),
                 }}
             />

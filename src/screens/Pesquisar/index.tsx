@@ -3,7 +3,7 @@ import { styleContainer, styleText, styleElementos } from "../../styles/globalst
 import { styles } from "./styles"
 import { IPagina } from "../../../App";
 
-export function Slide3() {
+export function Pesquisar() {
     const slide = require('../../assets/VasoPlanta3.png')
     const cacto = require('../../assets/cacto.png')
     const espada = require('../../assets/espada.png')
