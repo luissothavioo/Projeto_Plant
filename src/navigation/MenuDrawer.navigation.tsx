@@ -2,13 +2,11 @@ import { DrawerNavigationProp, createDrawerNavigator } from '@react-navigation/d
 import { MenuTabs } from './MenuBottomTab.navigation';
 import { colors } from '../styles/globalstyle'
 import { FontAwesome5, FontAwesome, Entypo, Ionicons } from '@expo/vector-icons';
+import { ScreenCamera } from '../screens';
 
 type MenuDrawerParam = {
     Home: undefined
-    Plantas: undefined
-    Todas: undefined
-    Informações: undefined
-    Mensagem: undefined
+    Camera: undefined
 }
 type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Home">
 export type DrawerTypes = {
@@ -36,39 +34,10 @@ export function DrawerNavigation() {
                     ),
                 }}
             />
-            <Drawer.Screen name='Plantas' component={MenuTabs}
+            <Drawer.Screen name='Camera' component={ScreenCamera}
                 options={{
-                    drawerLabel: 'Minhas Plantas',
-                    headerTitle: '',
                     drawerIcon: () => (
-                        <Ionicons name="flower" size={24} color={colors.white} />
-                    ),
-                }}
-            />
-            <Drawer.Screen name='Todas' component={MenuTabs}
-                options={{
-                    drawerLabel: 'Pesquisar Plantas',
-                    headerTitle: '',
-                    drawerIcon: () => (
-                        <FontAwesome5 name="search" size={24} color={colors.white} />
-                    ),
-                }}
-            />
-            <Drawer.Screen name='Informações' component={MenuTabs}
-                options={{
-                    drawerLabel: 'Informações',
-                    headerTitle: '',
-                    drawerIcon: () => (
-                        <FontAwesome5 name="book" size={24} color={colors.white} />
-                    ),
-                }}
-            />
-            <Drawer.Screen name='Mensagem' component={MenuTabs}
-                options={{
-                    drawerLabel: 'Chat',
-                    headerTitle: '',
-                    drawerIcon: () => (
-                        <Entypo name="chat" size={24} color={colors.white} />
+                        <Ionicons name="camera" size={24} color={colors.white} />
                     ),
                 }}
             />

@@ -6,3 +6,4 @@ export { Mensagem as Mensagem} from './Mensagem'
 export { Login as ScreenLogin} from "./login"
 export { Register as ScreenCadastrar } from "./cadastrar"
 export { CadMensagem as ScreenCadMensagem } from "./CadMensagem"
+export { Camera as ScreenCamera} from "./Camera"
