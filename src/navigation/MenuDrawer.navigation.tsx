@@ -2,11 +2,12 @@ import { DrawerNavigationProp, createDrawerNavigator } from '@react-navigation/d
 import { MenuTabs } from './MenuBottomTab.navigation';
 import { colors } from '../styles/globalstyle'
 import { FontAwesome5, FontAwesome, Entypo, Ionicons } from '@expo/vector-icons';
-import { ScreenCamera } from '../screens';
+import { ScreenCamera, ScreenImagens } from '../screens';
 
 type MenuDrawerParam = {
     Home: undefined
     Camera: undefined
+    Imagem: undefined
 }
 type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Home">
 export type DrawerTypes = {
@@ -38,6 +39,13 @@ export function DrawerNavigation() {
                 options={{
                     drawerIcon: () => (
                         <Ionicons name="camera" size={24} color={colors.white} />
+                    ),
+                }}
+            />
+            <Drawer.Screen name='Imagem' component={ScreenImagens}
+                options={{
+                    drawerIcon: () => (
+                        <FontAwesome name="picture-o" size={24} color={colors.white} />
                     ),
                 }}
             />
