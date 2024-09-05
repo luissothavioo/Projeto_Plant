@@ -11,7 +11,7 @@ export function Imagens() {
     const [image, setImage] = useState<string | null>(null);
 
     async function getAlbums() {
-        if (permissionResponse && permissionResponse.status !== 'granted') {
+        if (permissionResponse && permissionResponse.status !== 'granted' && permissionResponse.accessPrivileges !== "all") {
             await requestPermission();
         }
         const fetchedAlbums = await MediaLibrary.getAlbumsAsync({
@@ -28,9 +28,9 @@ export function Imagens() {
             quality: 1,
         });
         console.log(result);
-        if (!result.canceled) [
-            setImage(result.assets[0].uri)
-        ]
+        if (!result.canceled) {
+            setImage(result.assets[0].uri);
+        }
     }
 
     return (

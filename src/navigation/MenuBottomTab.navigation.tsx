@@ -5,13 +5,13 @@ import { colors } from "../styles/globalstyle"
 import { MessageNavigation } from './message.navigation'
 
 type MenuTabParam = {
-    Home: undefined
+    HomeInicial: undefined
     Plantas: undefined
     Todas: undefined
     Informações: undefined
     Mensagem: undefined
 }
-type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Home">
+type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "HomeInicial">
 export type MenuTabTypes = {
     navigation: MenuScreenNavigation
 }
@@ -28,7 +28,7 @@ export function MenuTabs() {
                 tabBarInactiveBackgroundColor: 'rgb(143, 135, 131)',
                 tabBarInactiveTintColor: colors.white,
             }}>
-            <Tab.Screen name="Home" component={Home}
+            <Tab.Screen name="HomeInicial" component={Home}
                 options={{
                     tabBarIcon: () => (
                         <FontAwesome name="home" size={26} color={colors.white} />

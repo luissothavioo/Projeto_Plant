@@ -28,5 +28,5 @@ export function Album({ album }: IAlbum) {
                 ))}
             </View>
         </View>
-    )
+    );
 }
