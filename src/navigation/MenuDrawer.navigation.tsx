@@ -2,13 +2,14 @@ import { DrawerNavigationProp, createDrawerNavigator } from '@react-navigation/d
 import { MenuTabs } from './MenuBottomTab.navigation';
 import { colors } from '../styles/globalstyle'
 import { FontAwesome5, FontAwesome, Entypo, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import { ScreenCamera, ScreenImagens, ScreenQrCode } from '../screens';
+import { ScreenCamera, ScreenImagens, ScreenLocation, ScreenQrCode } from '../screens';
 
 type MenuDrawerParam = {
     Home: undefined
     Camera: undefined
     Imagem: undefined
     QrCode: undefined
+    Location: undefined
 }
 type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Home">
 export type DrawerTypes = {
@@ -54,6 +55,13 @@ export function DrawerNavigation() {
                 options={{
                     drawerIcon: () => (
                         <MaterialCommunityIcons name="qrcode-scan" sixe={24} color={colors.white} />
+                    ),
+                }}
+            />
+            <Drawer.Screen name='Location' component={ScreenLocation}
+                options={{
+                    drawerIcon: () => (
+                        <FontAwesome5 name="map-marked-alt" sixe={24} color={colors.white} />
                     ),
                 }}
             />
